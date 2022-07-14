@@ -1,0 +1,160 @@
+.first,
+.second,
+.third,
+.fourth,
+.fifth {
+    display: flex;
+}
+
+.first .colored,
+.second .colored,
+.fifth .colored {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.third .colored {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25%;
+}
+
+.fourth .colored{
+    flex-basis: 25%;
+    flex-grow: 0;
+    flex-shrink: 0;    
+}
+
+.fourth .colored:last-child {
+    flex-grow: 1;
+}
+
+
+@media (max-width: 767px) {
+    .first,
+    .third,
+    .fourth,
+    .fifth {
+        flex-wrap: wrap;
+    }
+    
+    .first .colored {
+        flex-basis: 50%;
+    }
+
+    .third .colored,
+    .fourth .colored,
+    .fifth .colored {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+    .first,
+    .third,
+    .fourth,
+    .fifth {
+        flex-wrap: wrap;
+    }
+    
+    .first .colored,
+    .fourth .colored,
+    .fifth .colored {
+        flex-basis: 50%;
+    }
+
+    .third .colored {
+        flex-basis: 100%;        
+    }
+    
+    .fifth .colored:last-child {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+    .first,
+    .fifth {
+        flex-wrap: wrap;   
+    }
+
+    .first .colored,
+    .fifth .colored {
+        flex-basis: 50%;
+        flex-grow: 1;
+    }
+    
+    .third .colored {
+        flex-basis: 33%;
+        flex-grow: 1;
+    }
+
+    .fourth .colored {
+        flex-basis: 35%;
+        flex-grow: 0;
+        flex-shrink: 0;    
+    } 
+
+    .fourth .colored:nth-child(2) {
+        flex-shrink: 2;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1799px) {
+    .first,
+    .third,
+    .fifth {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .first .colored,
+    .third .colored {
+        flex-basis: 50%;
+    }
+
+    .third .colored:last-child {
+        flex-basis: 100%;
+    }
+
+    .fourth .colored {
+        flex-basis: 35%;
+        flex-grow: 0;
+        flex-shrink: 0;    
+    } 
+
+    .fourth .colored:nth-child(2) {
+        flex-shrink: 2;
+    }
+
+    .fifth .colored {
+        flex-basis: 33%;
+        flex-grow: 0;
+    }
+
+}
+    
+@media (min-width: 1800px) {
+    .first .colored,
+    .second .colored,
+    .fifth .colored {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    .third .colored {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 25%;
+    }
+
+    .fourth .colored{
+        flex-basis: 25%;
+        flex-grow: 0;
+        flex-shrink: 0;    
+    }
+
+    .fourth .colored:last-child {
+        flex-grow: 1;
+    }
+}
